@@ -2,7 +2,7 @@
 ### Desafio de Visão Computacional
 #### Contando Moedas de Real
 Programa desenvolvido para detectar, destacar e contar o número de moedas apresentadas em uma imagem.
- O programa é dividido em 5 etapas: Leitura da imangem, converção para escala de cinza, aplicação de um filtro para borrar a imagem, aplicar a função HoughCircles para contar as moedas e desenhar na imagem original o contorno e o centro.
+ O programa é dividido em 5 etapas: Leitura da imangem, conversão para escala de cinza, aplicação de um filtro para borrar a imagem, aplicar a função HoughCircles para contar as moedas e desenhar na imagem original o contorno e o centro.
 
 ## Executando o programa
 ```

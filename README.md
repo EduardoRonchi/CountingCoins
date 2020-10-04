@@ -1,80 +1,84 @@
-## Contando Moedas 
-### Desafio de Visão Computacional
-#### Contando Moedas de Real
-Programa desenvolvido para detectar, destacar e contar o número de moedas apresentadas em uma imagem.
- O programa é dividido em 5 etapas: Leitura da imangem, conversão para escala de cinza, aplicação de um filtro para borrar a imagem, aplicar a função HoughCircles para contar as moedas e desenhar na imagem original o contorno e o centro.
-
-## Executando o programa
+## Counting Coins 
+### Computer Vision Challenge
+### Requirements
+```
+python 3.6
+opencv 4.4.0
+numpy 1.19.2
+```
+#### Counting brazilian real coins
+Program developed to detect, highlight and count the number of coins in a determinde image
+The program is divided in 5 steps: reading the image, converting to grayscale, applying a blurr filter, applying the HoughCricles function to count, draw the center and border of the coins. 
+## Running the program
 ```
 $ python real_counter.py
 ```
-## Resultados obtidos:
+## Results:
 
-1.Carregando a imagem original. Resultado.
+1.Reading the desired image. To read the original image was used the funtcion cv2.imread().
 
-![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/real_original.jpg)
+![Original Image](https://github.com/EduardoRonchi/CountingCoins/blob/master/real_original.jpg)
 
-2.Converter a imagem para escala de cinza:
+2.Convert the image to grayscale. It was used cv2.cvtColor().
 
-![Escala de cinza](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_gray.jpg)
+![graysale_Image](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_gray.jpg)
 
-3.Aplicar um filtro para borrar a imagem:
+3.Apply a Gaussian filter to blur the image. It was used the cv2.GaussianBlur().
 
-![Imagem borrada](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_blurred.jpg)
+![Blurred image](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_blurred.jpg)
 
-4.Resultado da aplicação da função HoughCircles:
+4.In the blurred image was applied the HoughCircle function. The output is printed on screen:
 
-![Aplicando HoughCircle](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_counter_py.jpg)
+![Aplication of HoughCircle](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_counter_py.jpg)
 
-5.Resultado final:
+5.The function HoughCircle is also responsable for drawing the center and the border of each detected coin. The result is below:
 
-![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/image_result/real_result.jpg)
+![Result](https://github.com/EduardoRonchi/CountingCoins/blob/master/image_result/real_result.jpg)
 
-#### Contando Moedas de Dolar
+#### Counting Dollar Coins
+Program developed to detect, highlight and count the number of dollar coins for a given image.
+The program was divided into 7 steps: image reading, conversion to grayscale, conversion to binary image, application of morphological filters,
+application of the SimpleBlobDetector function, print the number of detected coins and apply the Circle function to draw the outline and the center of each coin.
 
-Programa desenvolvido para detectar, destacar e contabilizar o número de moedas de dolar de uma determinada imagem.
-O programa foi dividido em 7 etapas: leitura da imagem, conversão para escala de cinza, conversão para padrão binário, aplicação de filtros morfológicos,
-aplicação da função SimpleBlobDetector, imprimir a quantidade de moedas detectadas e aplicar a função Circle para desenhar o contorno e o centro de cada moeda.
-
-## Executando o programa
-
-Existem duas opções para rodar o programa dolar_counter.py, com ou sem imprimir todas as transformações morfológicas usadas para chegar no melhor resultado.
-Executar:
+## Running the program
+There are two options for running the dolar_counter.py program, with or without printing all morphological transformations used to achieve the best result.
+Run:
 ```
 $ python dolar_counter.py
 ```
-para imprimir na tela somente a melhor transformação morfológica ou 
+to print on screen only the best morphological transformation or 
 ```
 $ python real_counter.py morph
 ```
-para imprimir na tela todas as transformações morfológicas.
+to print on screen all the morphological transformations available.
 
-## Resultados obtidos:
+## Results:
 
-1.Leitura da imagem original.
+1.Reading the original image.
 
-![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/dolar_original.png)
+![Original image](https://github.com/EduardoRonchi/CountingCoins/blob/master/dolar_original.png)
 
-2.Conversão para escala de cinza.
+2.Convert to grayscale.
 
-![Escala de cinza](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_gray_image.png)
+![Grayscale](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_gray_image.png)
 
-3.Aplicação de threshold. Aqui foi usado a função cv2.threshold() com valor de threshold de 38. Nesta etapa foram necessárias várias tentativas para encontrar o melhor valor de threshold. O valor de 38 foi o melhor para o restante do programa.
+3.Applying threshold to transform to binary image. It was used the cv2.threshold() function with threshold equal to 38. 
+On this step were needed several attempts to find the best threshold value.
+ 
+![Binary Image](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_mask_image.png)
 
-![Imagem Binaria](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_mask_image.png)
+4.Apply morphological filters. In this stage, several morphological filters were tested and several adjustments to the program were necessary to find the best solution. It was the most challenging step. Several morphological transformations were tested, such as, erosion, dilation, opening, closing, tophat and morphological gradient. The best result was for dilation with a 5x5 kernel and three interactions
 
-4.Aplicar filtros morfológicos. Nessa etapa foram testados diversos filtros morfológicos e foram necessários diversos ajustes no programa para encontrar a melhor solução. Foi a etapa mais desafiadora. Foram testadas diversas transformações morfológicas como, erosion, dilation, opening, closing, tophat e morphological gradient. O melhor resultado foi para dilation com kernel de 5x5 e com três interações.
+![Morphologica_filter](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_dilation.png)
 
-![Após filtro morfológico](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_dilation.png)
-
-5.Aplicação da função SimpleBlobDetector. Foi necessário aplicar diversos parâmetros para a correta identificação das moedas, parâmetros como area, circularity, convexity e inertia.
+5.Application of the SimpleBlobDetector function. It was necessary to apply several parameters for the correct identification of the coins, parameters such as area, circularity, convexity and inertia.
 
 ![SimpleBlobDetector](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_blob_counter.png)
 
-6.A quantidade de moedas contadas é impressa no terminal, conforme a imagem abaixo.
+6.The number of coins counted is printed on the terminal, as shown in the image below.
 
 ![Coins Detected](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_python_py.jpg)
 
-7.Aplicação da função Circle para desenhar os centros e contornos das moedas. Para isso foi necessário salvar algums parâmetros da variável keypoints ao rodar a função SimpleBlobDetector.
+7.Application of the Circle function to draw the centers and contours of the coins. It was needed to save some parameters of the keypoints variable when running the SimpleBlobDetector function, such as x and y coordinates and the diameter of each blob.
 
-![Desenho final](https://github.com/EduardoRonchi/CountingCoins/blob/master/image_result/dolar_result.png)
+![Final result](https://github.com/EduardoRonchi/CountingCoins/blob/master/image_result/dolar_result.png)

@@ -9,19 +9,24 @@ Programa desenvolvido para detectar, destacar e contar o número de moedas apres
 $ python real_counter.py
 ```
 ##Resultados obtidos:
-1. Carregando a imagem original. Resultado:
+1.Carregando a imagem original. Resultado.
+
 ![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/real_original.jpg)
 
-2. Converter a imagem para escala de cinza:
+2.Converter a imagem para escala de cinza:
+
 ![Escala de cinza](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_gray.jpg)
 
-3. Aplicar um filtro para borrar a imagem:
+3.Aplicar um filtro para borrar a imagem:
+
 ![Imagem borrada](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_blurred.jpg)
 
-4. Resultado da aplicação da função HoughCircles:
+4.Resultado da aplicação da função HoughCircles:
+
 ![Aplicando HoughCircle](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/real_counter_py.jpg)
 
-5. Resultado final:
+5.Resultado final:
+
 ![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/image_result/real_result.jpg)
 
 #### Contando Moedas de Dolar
@@ -43,24 +48,30 @@ $ python real_counter.py morph
 para imprimir na tela todas as transformações morfológicas.
 
 ##Resultados obtidos:
-1. Leitura da imagem original.
+1.Leitura da imagem original.
+
 ![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/dolar_original.png)
 
-2. Conversão para escala de cinza.
+2.Conversão para escala de cinza.
+
 ![Escala de cinza](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_gray_image.png)
 
-3. Aplicação de threshold. Aqui foi usado a função cv2.threshold() com valor de threshold de 38. Nesta etapa foram necessárias várias tentativas para encontrar o melhor valor de threshold. O valor de 38 foi o melhor para o restante do programa.
+3.Aplicação de threshold. Aqui foi usado a função cv2.threshold() com valor de threshold de 38. Nesta etapa foram necessárias várias tentativas para encontrar o melhor valor de threshold. O valor de 38 foi o melhor para o restante do programa.
+
 ![Imagem Binaria](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_mask_image.png)
 
-4. Aplicar filtros morfológicos. Nessa etapa foram testados diversos filtros morfológicos e foram necessários diversos ajustes no programa para encontrar a melhor solução. Foi a etapa mais desafiadora. Foram testadas diversas transformações morfológicas como, erosion, dilation, opening, closing, tophat e morphological gradient. O melhor resultado foi para dilation com kernel de 5x5 e com três interações.
+4.Aplicar filtros morfológicos. Nessa etapa foram testados diversos filtros morfológicos e foram necessários diversos ajustes no programa para encontrar a melhor solução. Foi a etapa mais desafiadora. Foram testadas diversas transformações morfológicas como, erosion, dilation, opening, closing, tophat e morphological gradient. O melhor resultado foi para dilation com kernel de 5x5 e com três interações.
+
 ![Após filtro morfológico](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_dilation.png)
 
-5. Aplicação da função SimpleBlobDetector. Foi necessário aplicar diversos parâmetros para a correta identificação das moedas, parâmetros como area, circularity, convexity e inertia.
+5.Aplicação da função SimpleBlobDetector. Foi necessário aplicar diversos parâmetros para a correta identificação das moedas, parâmetros como area, circularity, convexity e inertia.
+
 ![SimpleBlobDetector](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_blob_counter.png)
 
-6. A quantidade de moedas contadas é impressa no terminal, conforme a imagem abaixo.
+6.A quantidade de moedas contadas é impressa no terminal, conforme a imagem abaixo.
+
 ![Coins Detected](https://github.com/EduardoRonchi/CountingCoins/blob/master/assets/dolar_python_py.jpg)
 
-7. Aplicação da função Circle para desenhar os centros e contornos das moedas. Para isso foi necessário salvar algums parâmetros da variável keypoints ao rodar a função SimpleBlobDetector.
-![Desenho final](https://github.com/EduardoRonchi/CountingCoins/blob/master/image_result/dolar_result.png)
+7.Aplicação da função Circle para desenhar os centros e contornos das moedas. Para isso foi necessário salvar algums parâmetros da variável keypoints ao rodar a função SimpleBlobDetector.
 
+![Desenho final](https://github.com/EduardoRonchi/CountingCoins/blob/master/image_result/dolar_result.png)

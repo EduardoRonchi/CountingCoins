@@ -4,11 +4,12 @@
 Programa desenvolvido para detectar, destacar e contar o número de moedas apresentadas em uma imagem.
  O programa é dividido em 5 etapas: Leitura da imangem, converção para escala de cinza, aplicação de um filtro para borrar a imagem, aplicar a função HoughCircles para contar as moedas e desenhar na imagem original o contorno e o centro.
 
-## Rodando o programa
+## Executando o programa
 ```
 $ python real_counter.py
 ```
-##Resultados obtidos:
+## Resultados obtidos:
+
 1.Carregando a imagem original. Resultado.
 
 ![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/real_original.jpg)
@@ -35,7 +36,8 @@ Programa desenvolvido para detectar, destacar e contabilizar o número de moedas
 O programa foi dividido em 7 etapas: leitura da imagem, conversão para escala de cinza, conversão para padrão binário, aplicação de filtros morfológicos,
 aplicação da função SimpleBlobDetector, imprimir a quantidade de moedas detectadas e aplicar a função Circle para desenhar o contorno e o centro de cada moeda.
 
-## Running the program
+## Executando o programa
+
 Existem duas opções para rodar o programa dolar_counter.py, com ou sem imprimir todas as transformações morfológicas usadas para chegar no melhor resultado.
 Executar:
 ```
@@ -47,7 +49,8 @@ $ python real_counter.py morph
 ```
 para imprimir na tela todas as transformações morfológicas.
 
-##Resultados obtidos:
+## Resultados obtidos:
+
 1.Leitura da imagem original.
 
 ![imagem original](https://github.com/EduardoRonchi/CountingCoins/blob/master/dolar_original.png)

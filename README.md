@@ -1,11 +1,17 @@
 ## Counting Coins 
 ### Computer Vision Challenge
 ### Requirements
+List of used libraries
 ```
 python 3.6
 opencv 4.4.0
 numpy 1.19.2
 ```
+To install all required packages, run:
+```
+$ pip install -r requirements.txt
+```
+These programs were developed usinv venv with python 3.6 version.
 #### Counting brazilian real coins
 Program developed to detect, highlight and count the number of coins in a determinde image
 The program is divided in 5 steps: reading the image, converting to grayscale, applying a blurr filter, applying the HoughCricles function to count, draw the center and border of the coins. 
